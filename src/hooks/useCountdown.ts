@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 
 export function useCountdown(from: number) {
   const [counter, setCounter] = useState(from - Date.now());
