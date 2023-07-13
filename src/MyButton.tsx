@@ -1,10 +1,6 @@
-'use client'
-
 import React from "react";
 
-const MyButton: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>> = (
-  props
-) => {
+function Button(props: React.ButtonHTMLAttributes<HTMLButtonElement>) {
   const { children, ...rest } = props;
   console.log("MyButton render");
 
@@ -13,6 +9,8 @@ const MyButton: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>> = (
       {children}
     </button>
   );
-};
+}
 
-export default React.memo(MyButton);
+const MyButton = React.memo(Button);
+
+export default MyButton;

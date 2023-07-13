@@ -1,11 +1,10 @@
-'use client'
-
-import MyButton from "@/components/MyButton";
-import { useCountdown } from "@/hooks/useCountdown";
+import MyButton from './MyButton';
+import { useCountdown } from './hooks/useCountdown';
+import './App.css'
 
 const DAY = 24 * 60 * 60 * 1000;
 
-export default function Home() {
+function App() {
   // 這隻通通都不能改
   const { value, onStart, onStop, isActive } = useCountdown(Date.now() + DAY);
 
@@ -27,3 +26,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default App
