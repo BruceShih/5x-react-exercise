@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 function format(time: number) {
   const days = Math.floor(time / 86400);
@@ -28,13 +28,13 @@ export function useCountdown(from: number) {
     }
   }, [counter, isActive]);
 
-  const onStart = () => {
+  const onStart = useCallback(() => {
     setIsActive(true);
-  };
+  }, []);
 
-  const onStop = () => {
+  const onStop = useCallback(() => {
     setIsActive(false);
-  };
+  }, []);
 
   return {
     value,
